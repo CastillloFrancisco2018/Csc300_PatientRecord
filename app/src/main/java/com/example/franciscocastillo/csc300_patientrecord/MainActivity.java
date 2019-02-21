@@ -10,24 +10,25 @@ import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ListView listView;
+    private ListView lv;
+    private PatientRecordArrayAdapter aa;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
-        for (int i = 0; i<Core.thePatientStrings.length; i++)
+        for (int i = 0; i<Core.thePatient.length; i++)
         {
-            Core.thePatientStrings[i] = "N/A";
+            Core.thePatient[i] = new PatientRecord();
         }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        PatientRecord pr1 = new PatientRecord("Francisco","Castillo",'C',20);
-        System.out.print(pr1.getAge());
 
-        ArrayAdapter<String> aa = new ArrayAdapter<String>(this, R.layout.list_view_row, Core.thePatientStrings);
-        ListView lv = (ListView)this.findViewById(R.id.listView);
-        lv.setAdapter(aa);
-        lv.invalidateViews();
+        ArrayAdapter aa2 = new ArrayAdapter(this, R.layout.list_view_row, Core.thePatientStrings);
+        this.aa = new PatientRecordArrayAdapter(this,R.layout.list_view_row_advanced,Core.thePatient);
+        this.lv = this.findViewById(R.id.listView);
+        this.lv.setAdapter(aa);
+
     }
     public void APRbuttonPressed(View v){
         Intent i = new Intent(this, patient_record_add_new.class);

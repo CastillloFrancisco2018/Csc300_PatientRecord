@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "776675634453",
+    "firebase_url": "https://csc300patientrecord.firebaseio.com",
+    "project_id": "csc300patientrecord",
+    "storage_bucket": "csc300patientrecord.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:776675634453:android:15e1795f3a4fc477",
+        "android_client_info": {
+          "package_name": "com.example.franciscocastillo.csc300_patientrecord"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "776675634453-0e8mldfdtpboifbmvp40625rgf1rglfo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.franciscocastillo.csc300_patientrecord",
+            "certificate_hash": "7e63de394d2c12ce2a830d813fe0a0181dc71980"
+          }
+        },
+        {
+          "client_id": "776675634453-olp035cc7dhqebu5g3coosha8he5tr5k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDR_TrMZgk6ffgZ0WofindhtMIUPXv9rRc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "776675634453-olp035cc7dhqebu5g3coosha8he5tr5k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -6,6 +6,8 @@ public class Core
     public static String[] thePatientStrings = new String[1000];
     public static int numberOfPatients = 0;
 
+
+
     public static void addPatientRecord(PatientRecord pr)
     {
         Core.thePatient[Core.numberOfPatients]= pr;

@@ -1,6 +1,7 @@
 package com.example.franciscocastillo.csc300_patientrecord;
 
-public class PatientRecord {
+public class PatientRecord
+{
     //fields
     private String first_name;
     private String last_name;
@@ -12,43 +13,34 @@ public class PatientRecord {
         this.last_name = last_name;
         this.middle_initial = middle_initial;
         this.age = age;
-
-    }
-    //getter and setter methods
-    public void setFirst_name(String first_name) {
-        this.first_name = first_name;
-    }
-
-    public void setLast_name(String last_name) {
-        this.last_name = last_name;
+        }
+    public PatientRecord(){
+        this.first_name = "FNAME";
+        this.last_name ="LNAME";
+        this.middle_initial = 'I';
+        this.age = 0;
     }
 
-    public void setMiddle_initial(char middle_initial) {
-        this.middle_initial = middle_initial;
+    public String getNameString()
+    {
+        return this.first_name+" "+this.middle_initial+" "+this.last_name;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public String getAgeString()
+    {
+        return "Age: ("+ this.age+") ";
     }
 
-    public String getFirst_name() {
-        return first_name;
+    public String toString()
+    {
+        return this.first_name+" "+this.middle_initial+" "+this.last_name+" ("+this.age+") ";
     }
 
-    public String getLast_name() {
-        return last_name;
-    }
+    public String display()
+    {
+        return this.first_name+" "+this.middle_initial+" "+this.last_name+" ("+this.age+") ";
 
-    public char getMiddle_initial() {
-        return middle_initial;
-    }
-
-    public int getAge() {
-        return age;
-    }
-    public String display(){
-        String tempStr = (this.first_name + " " + this.last_name + " " + this.middle_initial + this.age);
-        return(tempStr);
     }
 }
+
 
