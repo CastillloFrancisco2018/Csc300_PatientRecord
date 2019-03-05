@@ -16,18 +16,21 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
-        for (int i = 0; i<Core.thePatient.length; i++)
+        //initializes the array of Strings so there are place holder strings in there
+        for(int i = 0; i < Core.thePatients.length; i++)
         {
-            Core.thePatient[i] = new PatientRecord();
+            Core.thePatients[i] = new PatientRecord();
         }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Core.aa = new PatientRecordArrayAdapter(this, R.layout.list_view_row_advanced, Core.thePatients);
+        this.lv = (ListView)this.findViewById(R.id.listView);
+        this.lv.setAdapter(Core.aa);
 
-        ArrayAdapter aa2 = new ArrayAdapter(this, R.layout.list_view_row, Core.thePatientStrings);
-        this.aa = new PatientRecordArrayAdapter(this,R.layout.list_view_row_advanced,Core.thePatient);
-        this.lv = this.findViewById(R.id.listView);
-        this.lv.setAdapter(aa);
+        //Start Listening for changes to the database
+        Core.listenForDatabaseChanges(); //non-blocking!!!!
 
     }
     public void APRbuttonPressed(View v){

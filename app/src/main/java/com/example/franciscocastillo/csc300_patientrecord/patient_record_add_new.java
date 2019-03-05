@@ -14,22 +14,18 @@ public class patient_record_add_new extends AppCompatActivity {
         setContentView(R.layout.activity_patient_record_add_new);
     }
     public void addNewButtonPressed(View v){
-        EditText firstnameET = (EditText)this.findViewById(R.id.firstnameET);
-        EditText lastnameET = (EditText)this.findViewById(R.id.lastnameET);
-        EditText middleinitialET = (EditText)this.findViewById(R.id.middleinitialET);
+        EditText firstNameET = (EditText)this.findViewById(R.id.firstnameET);
+        EditText lastNameET = (EditText)this.findViewById(R.id.lastnameET);
+        EditText middleInitialET = (EditText)this.findViewById(R.id.middleinitialET);
         EditText ageET = (EditText)this.findViewById(R.id.ageET);
 
-        PatientRecord pr1 = new PatientRecord(firstnameET.getText().toString(), lastnameET.getText().toString(), middleinitialET.getText().toString().charAt(0), Integer.parseInt(ageET.getText().toString()));
-
-        TextView pr1ET = this.findViewById(R.id.pr1ET);
-        pr1ET.setText(pr1.display());
-        Core.thePatient[Core.numberOfPatients] = pr1;
-        String fname = firstnameET.getText().toString();
-        String lname = lastnameET.getText().toString();
-        char middleInitial = middleinitialET.getText().toString().charAt(0);
+        String fname = firstNameET.getText().toString();
+        String lname = lastNameET.getText().toString();
+        char middleInitial = middleInitialET.getText().toString().charAt(0);
         int age = Integer.parseInt(ageET.getText().toString());
         PatientRecord pr = new PatientRecord(fname, lname, middleInitial, age);
-        Core.addPatientRecord(pr1);
+        Core.addPatientRecordDB(pr);
+        this.finish();
 
 
     }
